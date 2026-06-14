@@ -1,18 +1,125 @@
 #root {
   max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: 2.7rem;
   text-align: center;
-  font-family: Inter, Avenir, Helvetica, Arial, sans-serif;
-  color: black;
-  background-color: #faebd7;
 }
 
-
- body {
+body {
   margin: 0;
   display: flex;
   place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  background-image: url("https://img.magnific.com/free-vector/potted-plant-doodle-vector-background_53876-126321.jpg?w=2000");
+}
+
+
+
+.Contents {
+  height: auto;
+  width: 600px;
+  margin: -40px auto 0 auto;
+  text-align: center;
+}
+
+.Card {
+  color: black;
+  /* text-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5); */
+  font-size: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 2px;
+  box-shadow: 0 0 5px 2px #0000004d;
+  transform-style: preserve-3d;
+  /* font-weight: 700; */
+  height: 200px;
+  cursor: pointer;
+  transition: 0.3s;
+  transform: perspective(1000px) rotateX(var(--rotate-X, 0));
+  padding: 2em;
+  /* background color is set via difficulty-* classes */
+
+  .card-inner {
+    transform: perspective(1000px) rotateX(var(--rotate-X, 0)); /* Apply rotation to card content */
+  }
+
+  &.flipped .front {
+    display: none;
+  }
+
+  & .back {
+    display: none;
+  }
+
+  &.flipped {
+    --rotate-X: 180deg;
+
+    & .back {
+      display: block;
+    }
+  }
+}
+
+/* Difficulty color variants */
+.difficulty-easy {
+  background-color: rgba(68, 210, 110, 0.9); /* green */
+}
+
+.difficulty-medium {
+  background-color: rgba(255, 223, 99, 0.9); /* yellow */
+}
+
+.difficulty-hard {
+  background-color: rgba(255, 99, 99, 0.9); /* red */
+}
+
+.Card:hover {
+  box-shadow: 0 0 10px 10px #0000004d;
+}
+
+.Card:active {
+  border: 4px;
+  border-style: solid;
+  border-color: white;
+}
+
+img {
+  max-width: 250px; /* Set the maximum width to 100% of the parent container (the card) */
+  height: auto;
+}
+
+.Front-Picture {
+  max-width: 140px;
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto 0.6rem auto;
+}
+
+button {
+  margin-left: 5px;
+  margin-right: 5px;
+  margin-top: 10px;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+}
+
+button:hover {
+  box-shadow: 0 0 10px 10px #0000004d;
+  border-color: #646cff;
+}
+
+button:active {
+  background-color: #303030;
+  border-style: solid;
+  border-color: white;
 }
